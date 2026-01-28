@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f2f2f2;
+        }
+        .cont{
+            display: flexbox;
+            justify-content: flex-start;
+            border: 100%;
+            background:#6a5acd;
+            color: #fff;   
+        }
+        h2{
+            text-align: center;
+            text-decoration: underline;
+            color:#6a5acd;
+        }
+        td{
+            padding: auto;
+            vertical-align: top;
+        }
+        .opsie{
+            background: #6a5acd;
+            color: #fff;
+        }
+        input,select,textarea,tr{
+            border-radius: 4px;
+            border: none;
+        }
+        textarea{
+            resize: none;
+        }
+        .radio,.checkbox{
+            width: auto;
+        }
+        .btn{
+            width: 120px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .submit{
+            background: #00ffcc;
+        }
+        .reset{
+            background: #ff9999;
+        }
+        .qualification-table{
+            width: 100px;
+            border-collapse: collapse;
+            background: #fff;
+            color: #000;
+        }
+        .qualification-table th,.qualification-table td{
+            border: 1px solid #000;
+            padding: 1px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>STUDENT REGISTRATION FORM </h2>
+     <div class="cont">
+        <form >
+            <table>
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" maxlength="30" required></td>
+                    <td class="lef">(max 30 characters a-z and A-Z)</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" maxlength="30" required></td>
+                    <td class="lef">(max 30 characters a-z and A-Z)</td>
+                </tr>
+                <tr>
+                    <td>Date Of Birth</td>
+                    <td>
+                        <select>
+                            <option >Day</option>
+                        </select>
+                        <select>
+                            <option >Month</option>
+                        </select>
+                        <select>
+                            <option >Year</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email ID</td>
+                    <td><input type="email" required></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td><input type="tel" pattern="[0-9]{10}" placeholder="10 digit number" required></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="gender" class="radio">Male
+                        <input type="radio" name="gender" class="radio">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea rows="4"></textarea></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td><input type="text" maxlength="30"></td>
+                </tr>
+                <tr>
+                    <td>Pin Code</td>
+                    <td><input type="number"></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td><input type="text" maxlength="30"></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Hobbies</td>
+                    <td>
+                        <input type="checkbox" name="" id="">Drawing
+                        <input type="checkbox" name="" id="">Singing
+                        <input type="checkbox" name="" id="">Dancing
+                        <input type="checkbox" name="" id="">Sketching
+                        <br><br>
+                        Others<input type="text" name="" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Qualification</td>
+                    <td>
+                        <table class="qualification-table">
+                            <tr class="opsie">
+                                <th>SI.No</th>
+                                <th>Examination</th>
+                                <th>Board</th>
+                                <th>Percentage</th>
+                                <th>Year</th>
+                            </tr>
+                            <tr>
+                                <td class="opsie">1</td>
+                                <td class="opsie">Class X</td>
+                                <td><input></td>
+                                <td><input></td>
+                                <td><input></td>
+                            </tr>
+                             <tr>
+                                <td class="opsie">2</td>
+                                <td class="opsie">Class XII</td>
+                                <td><input></td>
+                                <td><input></td>
+                                <td><input></td>
+                            </tr>
+                             <tr>
+                                <td class="opsie">3</td>
+                                <td class="opsie">Graduation</td>
+                                <td><input></td>
+                                <td><input></td>
+                                <td><input></td>
+                            </tr>
+                             <tr>
+                                <td class="opsie">4</td>
+                                <td class="opsie">Masters</td>
+                                <td><input></td>
+                                <td><input></td>
+                                <td><input></td>
+                            </tr>
+                           <tr class="opsie">
+                            <td></td>
+                            <td></td>
+                            <td>(10 char max)</td>
+                            <td>(upto 2 decimal)</td>
+                            <td></td>
+                           </tr>
+                           
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Courses Applied For</td>
+                    <td>
+                        <input type="radio" name="" id="" class="radio">BCA
+                        <input type="radio" name="" id="" class="radio">B.Com
+                        <input type="radio" name="" id="" class="radio">B.SC
+                        <input type="radio" name="" id="" class="radio">B.A
+                    </td>
+                </tr>
+                <tr>
+                   <td colspan="2" align="center">
+                    <button class="btn submit" type="submit">Submit</button>
+                    <button class="btn reset" type="reset">Reset</button>
+                   </td>
+
+                </tr>
+            </table>
+        </form>
+     </div>
+</body>
+</html>
