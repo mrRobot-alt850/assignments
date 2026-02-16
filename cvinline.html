@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+CU+Guides&display=swap" rel="stylesheet">
+<body style="margin: 0; padding: 0; background: #08080a; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: #e1e1e1; line-height: 1.6; 
+      --primary: #00f2fe; --secondary: #7028e4; --accent: #ff007a; --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.08);">
+
+    <!-- KEYFRAME ANIMATIONS (Required for "Fully Animated" requirement) -->
+    <style>
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
+        @keyframes glow { 0%, 100% { box-shadow: 0 0 15px var(--primary); } 50% { box-shadow: 0 0 30px var(--accent); } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+
+    <!-- HERO SECTION: VIDEO TEXT MASK -->
+    <header style="position: relative; height: 70vh; display: grid; place-items: center; overflow: hidden; background: #000;">
+        <video autoplay muted loop playsinline style="position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+            <source src="vid.mp4" type="video/mp4">
+        </video>
+        <!-- The Text Mask -->
+        <h1 style="position: relative; z-index: 1; margin: 0; font-size: clamp(4rem, 18vw, 12rem); font-weight: 900; background: #fff; color: #000; mix-blend-mode: screen; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+            HELLO.
+        </h1>
+    </header>
+
+    <main style="max-width: 1100px; margin: -100px auto 60px; padding: 0 20px; position: relative; z-index: 2;">
+        
+        <!-- PROFILE SECTION -->
+        <section style="background: var(--glass); backdrop-filter: blur(25px); border: 1px solid var(--border); border-radius: 40px; padding: 50px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; animation: slideIn 0.8s ease-out;">
+            
+            <!-- Animated Profile Image -->
+            <figure style="margin: 0; position: relative; width: 240px; height: 240px; flex-shrink: 0; animation: float 6s ease-in-out infinite;">
+                <div style="width: 100%; height: 100%; border-radius: 35% 65% 70% 30% / 30% 30% 70% 70%; background: linear-gradient(45deg, var(--primary), var(--secondary)); padding: 6px; animation: glow 4s infinite;">
+                    <img src="img.jpg" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 35% 65% 70% 30% / 30% 30% 70% 70%; border: 5px solid #08080a;">
+                </div>
+            </figure>
+
+            <!-- Bio Details -->
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="font-size: 2.8rem; margin: 0; background: linear-gradient(to right, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ATEEQ KHAN</h2>
+                <p style="color: var(--primary); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">Senior Creative Developer</p>
+                <p style="font-size: 1.1rem; color: #a0a0a0; margin-bottom: 25px;">
+                    Crafting digital masterpieces by merging cutting-edge logic with high-end aesthetics. I transform complex requirements into seamless, user-centric interfaces.
+                </p>
+                <!-- Skill Badges -->
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <span style="background: rgba(0, 242, 254, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 5px 15px; border-radius: 12px; font-size: 0.85rem;">UI/UX Architecture</span>
+                    <span style="background: rgba(112, 40, 228, 0.1); border: 1px solid var(--secondary); color: var(--secondary); padding: 5px 15px; border-radius: 12px; font-size: 0.85rem;">Full-Stack JS</span>
+                    <span style="background: rgba(255, 0, 122, 0.1); border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; border-radius: 12px; font-size: 0.85rem;">Web3 Design</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION TABLE SECTION -->
+        <section style="margin-top: 80px; animation: slideIn 1.2s ease-out;">
+            <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 40px;font-family:Playwrite CU Guides ,cursive;">Educational <span style="color: var(--primary);">Milestones</span></h3>
+            
+            <div style="overflow-x: auto; background: var(--glass); border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+                <table style="width: 100%; border-collapse: collapse; min-width: 700px; text-align: left;">
+                    <thead>
+                        <tr style="background: rgba(255,255,255,0.05);">
+                            <th style="padding: 25px; color: var(--primary); font-weight: 600;">Course / Degree</th>
+                            <th style="padding: 25px; color: var(--primary); font-weight: 600;">Institution</th>
+                            <th style="padding: 25px; color: var(--primary); font-weight: 600;">Timeline</th>
+                            <th style="padding: 25px; color: var(--primary); font-weight: 600; text-align: right;">Performance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 20px 25px;">Matric</td>
+                            <td style="padding: 20px 25px;">GOVT.HIGH SCHOOL</td>
+                            <td style="padding: 20px 25px;">2019 — 2021</td>
+                            <td style="padding: 20px 25px; text-align: right; font-weight: 700; color: #00ff88;">A+</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 20px 25px;">ICS</td>
+                            <td style="padding: 20px 25px;">PGC</td>
+                            <td style="padding: 20px 25px;">2021 — 2024</td>
+                            <td style="padding: 20px 25px; text-align: right; font-weight: 700; color: #00ff88;">A+</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 20px 25px;">BsCS</td>
+                            <td style="padding: 20px 25px;">Virtual University</td>
+                            <td style="padding: 20px 25px;">2025 —still in progress</td>
+                            <td style="padding: 20px 25px; text-align: right; font-weight: 700; color: #00ff88;">cgpa 2.7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer style="margin-top: 100px; text-align: center; color: #555; padding-bottom: 40px;">
+            <p style="font-size: 0.9rem;">Built with optimized inline logic & semantic markup.</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>

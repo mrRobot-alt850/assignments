@@ -1,0 +1,29 @@
+.new1{
+     font-style: italic;
+     color: aqua;
+     background-color: antiquewhite;
+     text-align: center;
+     font-weight: 100;
+     font-size: xx-large;
+     font-family: "Playwrite CU Guides", cursive;
+ }
+.new{
+   font-style: italic;
+   color: aquamarine;
+   background-color: rgb(255, 205, 255);
+   font-weight: 600;
+   font-size: large;
+   
+}
+.new1:hover{
+    color: antiquewhite;
+    cursor: pointer;
+    background-color: aquamarine;
+    
+}
+.new:hover{
+    color: rgb(255, 205, 252);
+    cursor: pointer;
+    background-color:greenyellow ;
+
+}
