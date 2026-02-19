@@ -1,0 +1,57 @@
+:root {
+    --dz-green: #006633; --ma-red: #c1272d; --tn-red: #e70013;
+    --star-red: #d21034; --ma-star-green: #006233;
+  }
+
+  body { 
+    display: flex; gap: 30px; justify-content: center; align-items: center; 
+    height: 100vh; margin: 0; background: #f0f0f0; flex-wrap: wrap;
+  }
+
+  /* Shared Flag Container Style */
+  .flag {
+    position: relative; width: 300px; height: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden;
+  }
+
+  /* --- ALGERIA --- */
+  .algeria { background: linear-gradient(90deg, var(--dz-green) 50%, #fff 50%); }
+  .algeria::before { /* Crescent */
+    content: ''; position: absolute; top: 50%; left: 50%;
+    transform: translate(-38%, -50%); width: 100px; height: 100px;
+    border-radius: 50%; box-shadow: -14px 0 0 0 var(--star-red);
+  }
+  .algeria::after { /* Star */
+    content: ''; position: absolute; top: 50%; left: 56.5%;
+    transform: translate(-50%, -50%) rotate(-18deg); width: 52px; height: 52px;
+    background: var(--star-red); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  /* --- MOROCCO --- */
+  .morocco { background: var(--ma-red); }
+  .morocco::after { /* Pentagram */
+    content: ''; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); width: 90px; height: 90px;
+    background: var(--ma-star-green);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    /* Inner cutout to make it an outline pentagram */
+    -webkit-mask: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  /* --- TUNISIA --- */
+  .tunisia { background: var(--tn-red); }
+  .tunisia::before { /* White Circle */
+    content: ''; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); width: 100px; height: 100px;
+    background: #fff; border-radius: 50%;
+  }
+  .tunisia-symbols { /* Red Crescent & Star Layer */
+    position: absolute; top: 50%; left: 51%; transform: translate(-50%, -50%);
+    width: 65px; height: 65px; border-radius: 50%;
+    box-shadow: -10px 0 0 0 var(--tn-red);
+  }
+  .tunisia-symbols::after {
+    content: ''; position: absolute; top: 50%; left: 70%;
+    transform: translate(-50%, -50%) rotate(-15deg); width: 35px; height: 35px;
+    background: var(--tn-red); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
