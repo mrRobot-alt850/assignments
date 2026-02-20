@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Flip Card</title>
+    <style>
+        :root {
+            --bg-color: #0f1016;
+            --accent-purple: #c084fc;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Background decorative circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-purple), #7c3aed);
+            z-index: -1;
+            filter: blur(20px);
+        }
+        .circle-1 { width: 300px; height: 300px; top: 10%; left: 25%; opacity: 0.6; }
+        .circle-2 { width: 250px; height: 250px; bottom: 10%; right: 25%; opacity: 0.4; }
+
+        /* The Card Container */
+        .card-container {
+            width: 450px;
+            height: 280px;
+            perspective: 1000px; /* Essential for 3D effect */
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        /* Hover Trigger */
+        .card-container:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and Back Styling */
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 30px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Back of the card */
+        .card-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 0;
+        }
+
+        /* Front specific elements */
+        .logo-row { display: flex; align-items: center; gap: 10px; }
+        .mastercard-logo { display: flex; }
+        .circle-red { width: 30px; height: 30px; background: #eb001b; border-radius: 50%; }
+        .circle-orange { width: 30px; height: 30px; background: #f79e1b; border-radius: 50%; margin-left: -15px; opacity: 0.9; }
+        .chip { width: 50px; height: 40px; background: #d4af37; border-radius: 8px; margin-left: auto; background: linear-gradient(135deg, #fceabb, #f8b500); }
+        
+        .card-number { font-size: 24px; letter-spacing: 3px; margin: 20px 0; font-family: 'Courier New', Courier, monospace; }
+        .label { font-size: 10px; text-transform: uppercase; opacity: 0.7; margin-bottom: 5px; }
+        .info-footer { display: flex; justify-content: space-between; align-items: flex-end; }
+        .name { font-size: 18px; font-weight: 500; }
+        .expiry { text-align: right; }
+
+        /* Back specific elements */
+        .mag-stripe { width: 100%; height: 50px; background: #1a1a1a; margin-top: 30px; }
+        .cvv-area { margin: 20px 30px; background: rgba(255,255,255,0.8); height: 40px; color: black; display: flex; align-items: center; justify-content: flex-end; padding-right: 15px; font-style: italic; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- Background Decoration -->
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+
+    <!-- Card -->
+    <div class="card-container">
+        <div class="card-inner">
+            
+            <!-- Front of Card -->
+            <div class="card-front">
+                <div class="logo-row">
+                    <div class="mastercard-logo">
+                        <div class="circle-red"></div>
+                        <div class="circle-orange"></div>
+                    </div>
+                    <span style="font-weight: 500;">Master Card</span>
+                    <div class="chip"></div>
+                </div>
+
+                <div>
+                    <div class="label">Card Number</div>
+                    <div class="card-number">8050 5040 2030 3020</div>
+                </div>
+
+                <div class="info-footer">
+                    <div>
+                        <div class="name">Prem Kumar Shahi</div>
+                    </div>
+                    <div class="expiry">
+                        <div class="label">Valid Thru</div>
+                        <div style="font-size: 16px;">05/28</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back of Card -->
+            <div class="card-back">
+                <div class="mag-stripe"></div>
+                <div class="cvv-area">123</div>
+                <div style="padding: 0 30px; font-size: 10px; opacity: 0.6;">
+                    This card is property of the bank. If found, please return to any branch. 
+                    Authorized signature required.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
