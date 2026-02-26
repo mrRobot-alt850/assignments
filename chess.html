@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* 1. Center the board on the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #2c3e50;
+        }
+
+        /* 2. Create the 8x8 Grid */
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+            border: 10px solid #34495e;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* 3. Style every square */
+        .chessboard div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+            user-select: none;
+        }
+
+        /* 4. Checkerboard Colors */
+        /* Light squares */
+        .chessboard div:nth-child(odd) { background-color: #ecf0f1; }
+        .chessboard div:nth-child(even) { background-color: #95a5a6; }
+
+        /* Fix the alternating pattern for rows */
+        .chessboard div:nth-child(n+9):nth-child(-n+16):nth-child(odd),
+        .chessboard div:nth-child(n+25):nth-child(-n+32):nth-child(odd),
+        .chessboard div:nth-child(n+41):nth-child(-n+48):nth-child(odd),
+        .chessboard div:nth-child(n+57):nth-child(-n+64):nth-child(odd) {
+            background-color: #95a5a6;
+        }
+        .chessboard div:nth-child(n+9):nth-child(-n+16):nth-child(even),
+        .chessboard div:nth-child(n+25):nth-child(-n+32):nth-child(even),
+        .chessboard div:nth-child(n+41):nth-child(-n+48):nth-child(even),
+        .chessboard div:nth-child(n+57):nth-child(-n+64):nth-child(even) {
+            background-color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chessboard">
+    <!-- Row 8 (Black Power Pieces) -->
+    <div>♜</div><div>♞</div><div>♝</div><div>♛</div><div>♚</div><div>♝</div><div>♞</div><div>♜</div>
+    <!-- Row 7 (Black Pawns) -->
+    <div>♟</div><div>♟</div><div>♟</div><div>♟</div><div>♟</div><div>♟</div><div>♟</div><div>♟</div>
+    <!-- Rows 6-3 (Empty Spaces) -->
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <!-- Row 2 (White Pawns) -->
+    <div>♙</div><div>♙</div><div>♙</div><div>♙</div><div>♙</div><div>♙</div><div>♙</div><div>♙</div>
+    <!-- Row 1 (White Power Pieces) -->
+    <div>♖</div><div>♘</div><div>♗</div><div>♕</div><div>♔</div><div>♗</div><div>♘</div><div>♖</div>
+</div>
+
+</body>
+</html>

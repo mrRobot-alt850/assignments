@@ -1,0 +1,86 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 10%;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Reusable Sections */
+.section {
+    padding: 4rem 10%;
+    text-align: center;
+}
+
+.dark { background: #1a1a1a; color: white; }
+.light { background: #f8f9fa; }
+.blue { background: #007bff; color: white; }
+
+/* Content Cards */
+.card-placeholder, .card-placeholder-white {
+    width: 80%;
+    height: 250px;
+    margin: 2rem auto;
+    border-radius: 12px;
+}
+
+.card-placeholder { background: #2d2d2d; }
+.card-placeholder-white { background: white; }
+
+/* Footer */
+.footer {
+    background: #fff;
+    padding: 3rem 10%;
+    border-top: 1px solid #eee;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.footer-col h4 {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col li {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}

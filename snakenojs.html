@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* The Game Box */
+  .game-box {
+    width: 400px;
+    height: 400px;
+    background-color: #1a1a1a;
+    border: 5px solid #333;
+    position: relative;
+    margin: 50px auto;
+    overflow: hidden;
+  }
+
+  /* The Apple */
+  .apple {
+    width: 20px;
+    height: 20px;
+    background-color: #ff3131;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: 300px;
+  }
+
+  /* Snake Body Segments */
+  .snake-segment {
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    position: absolute;
+    border-radius: 4px;
+    /* Move segments along the same path with a delay */
+    animation: snakeMove 6s infinite linear;
+  }
+
+  /* Specific Head Color */
+  .snake-segment:nth-child(1) { background-color: #81C784; }
+
+  /* Delay segments to create the body trail effect */
+  .s1 { animation-delay: 0s; }
+  .s2 { animation-delay: -0.1s; }
+  .s3 { animation-delay: -0.2s; }
+  .s4 { animation-delay: -0.3s; }
+  .s5 { animation-delay: -0.4s; }
+
+  /* Movement path chasing the apple */
+  @keyframes snakeMove {
+    0%   { top: 300px; left: 50px; }
+    25%  { top: 300px; left: 300px; } /* Move Right */
+    50%  { top: 50px;  left: 300px; } /* Move Up to Apple */
+    75%  { top: 50px;  left: 50px;  } /* Move Left */
+    100% { top: 300px; left: 50px;  } /* Move Down */
+  }
+</style>
+</head>
+<body>
+
+<div class="game-box">
+  <div class="apple"></div>
+  <!-- Snake segments create the body -->
+  <div class="snake-segment s1"></div>
+  <div class="snake-segment s2"></div>
+  <div class="snake-segment s3"></div>
+  <div class="snake-segment s4"></div>
+  <div class="snake-segment s5"></div>
+</div>
+
+</body>
+</html>

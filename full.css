@@ -1,0 +1,12 @@
+body{
+    display: flex;
+
+}
+img{
+    width: 100px;
+    border-radius: 20%;
+    margin-left: 200%;
+    margin-top: -30%;
+    border-style: dotted;
+    border-width: 10px;
+}
